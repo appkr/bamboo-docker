@@ -1,12 +1,12 @@
 bamboo-server:
-    image: matisq/bamboo-server
+    image: appkr/bamboo-server:5.15.3
     ports:
         - 8085:8085
         - 54663:54663
     links:
         - postgres
     environment:
-        BAMBOO_VERSION: ${BAMBOO_VERSION}
+        BAMBOO_VERSION: "5.15.3"
         BAMBOO_HOME: /home/bamboo
         BAMBOO_BAMBOO_SERVER_ID: bamboo-server
     volumes_from:
@@ -39,7 +39,7 @@ postgres-data:
         - /var/lib/postgresql/data/pgdata
 
 bamboo-agent:
-    image: matisq/bamboo-agent
+    image: appkr/bamboo-agent:5.15.3
     links:
         - bamboo-server
     environment:

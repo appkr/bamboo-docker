@@ -1,5 +1,5 @@
 bamboo-server:
-    build: bamboo-server
+    build: ./bamboo-server
     ports:
         - 8085:8085
         - 54663:54663
@@ -39,7 +39,7 @@ postgres-data:
         - /var/lib/postgresql/data/pgdata
 
 bamboo-agent:
-    build: bamboo-agent
+    build: ./bamboo-agent
     links:
         - bamboo-server
     environment:
