@@ -1,0 +1,1 @@
+-c phpunit.xml -d memory_limit=512M
